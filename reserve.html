@@ -79,7 +79,7 @@
     $("#add-btn").on("click", function(event) {
       event.preventDefault();
 
-      let newCharacter = {
+      let newTable = {
         name: $("#name").val().trim(),
         email: $("#email").val().trim(),
         phone: $("#phone").val().trim(),
@@ -87,10 +87,9 @@
       };
 
       // Question: What does this code do??
-      $.post("/", newCharacter)
+      $.post("/", newTable)
         .then(function(data) {
           console.log(data);
-          alert("Adding character...");
         });
 
     });
