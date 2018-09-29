@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
+
 <style>
     body {background-image: url("images/FIRE.jpg")}
 </style>
@@ -93,7 +94,7 @@
             };
 
             // Question: What does this code do??
-            $.post("/", newTable)
+            $.post("/reservedtables", newTable)
                 .then(function (data) {
                     console.log(data);
                 });
