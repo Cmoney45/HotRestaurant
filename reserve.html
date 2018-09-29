@@ -80,27 +80,28 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-        // Question: What does this code do?
-        $("#add-btn").on("click", function (event) {
-            event.preventDefault();
+  </div>
 
-            let newTable = {
-                name: $("#name").val().trim(),
-                email: $("#email").val().trim(),
-                phone: $("#phone").val().trim(),
-                uniqueID: $("#uniqueID").val().trim()
-            };
+  <script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
 
-            // Question: What does this code do??
-            $.post("/", newTable)
-                .then(function (data) {
-                    console.log(data);
-                });
+      let newTable = {
+        name: $("#name").val().trim(),
+        email: $("#email").val().trim(),
+        phone: $("#phone").val().trim(),
+        uniqueID: $("#uniqueID").val().trim()
+      };
 
+      // Question: What does this code do??
+      $.post("/reservedtables", newTable)
+        .then(function(data) {
+          console.log("Added Submission", data);
         });
 
-    </script>
+
+
 </body>
 
 </html>
