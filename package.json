@@ -4,7 +4,8 @@
   "description": "Restaurant Table Booking Website",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4"
   },
   "devDependencies": {},
   "scripts": {
