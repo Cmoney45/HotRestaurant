@@ -14,6 +14,7 @@
 <style>
     body {background-image: url("images/FIRE.jpg")}
 </style>
+
 <body>
 
     <div class="container">
@@ -69,6 +70,44 @@
     </div>
 
     <script type="text/javascript">
+        const sampleTables = [
+            table1 = {
+                uniqueID: 'freeze',
+                name: 'Mr. Freeze',
+                email: 'mrfreeze@gmail.com',
+                phone: '555-555-5555'
+            },
+            table2 = {
+                uniqueID: 'penguin',
+                name: 'Penguin',
+                email: 'penguin@gmail.com',
+                phone: '555-555-5555'
+            },
+            table3 = {
+                uniqueID: 'phoenix',
+                name: 'Phoenix Force',
+                email: 'phoenixforce@gmail.com',
+                phone: '555-555-5555'
+            },
+            {
+                name: "Yoda",
+                phoneNumber: 524151468684,
+                email: "ydgiahud@umn.ed",
+                UniqueID: 2000
+            },
+            {
+                name: "Yoda",
+                phoneNumber: 5468516416516,
+                email: "ydgiahud@umn.ed",
+                UniqueID: 2000
+            },
+            {
+                name: "Yoda",
+                phoneNumber: 564856516558,
+                email: "ydgiahud@umn.ed",
+                UniqueID: 2000
+            }
+        ]
 
         function runTableQuery() {
             // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
@@ -100,6 +139,34 @@
                         tableList.append(listItem);
                     }
                 });
+        }
+
+        function sampleScript(sampleTables) {
+
+            // Here we then log the tableData to console, where it will show up as an object.
+            console.log(sampleTables);
+            console.log("------------------------------------");
+
+            // Loop through and display each of the customers
+            for (i in sampleTables) {
+
+                // Get a reference to the tableList element and populate it with tables
+                var tableList = $("#tableList");
+
+                // Then display the fields in the HTML (Section Name, Date, URL)
+                var listItem = $("<li class='list-group-item mt-4'>");
+
+                listItem.append(
+                    $("<h2>").text("Table #" + (parseInt(i) + 1)),
+                    $("<hr>"),
+                    $("<h2>").text("ID: " + sampleTables[i].uniqueID),
+                    $("<h2>").text("Name: " + sampleTables[i].name),
+                    $("<h2>").text("Email: " + sampleTables[i].email),
+                    $("<h2>").text("Phone: " + sampleTables[i].phone)
+                );
+
+                tableList.append(listItem);
+            }
         }
 
         function runWaitListQuery() {
@@ -151,8 +218,9 @@
 
         // Run Queries!
         // ==========================================
-        runTableQuery();
-        runWaitListQuery();
+        sampleScript(sampleTables);
+        // runTableQuery();
+        // runWaitListQuery();
 
 
     </script>
