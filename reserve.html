@@ -87,9 +87,9 @@
       };
 
       // Question: What does this code do??
-      $.post("/", newTable)
+      $.post("/reservedtables", newTable)
         .then(function(data) {
-          console.log(data);
+          console.log("Added Submission", data);
         });
 
     });
