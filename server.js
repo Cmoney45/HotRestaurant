@@ -17,7 +17,8 @@ app.get("/", function (req, res) {
 });
 
 app.get("/tables", function (req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
+    //res.sendFile(path.join(__dirname, "tables.html"));
+    res.json(reserved)
 });
 
 app.get("/reserve", function (req, res) {
@@ -47,20 +48,17 @@ const reserved = [{
 
 const waiting = [];
 
-app.post("/api/characters", function (req, res) {
+app.post("/tables", function (req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body parsing middleware
     var newreservation = req.body;
+    
 
-    // Using a RegEx Pattern to remove spaces from newCharacter
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    newreservation.uniqueId = newcharacter.name.replace(/\s+/g, "").toLowerCase();
+    console.log(newreservation);
 
-    console.log(newcharacter);
+    reserved.push(newreservation);
 
-    characters.push(newcharacter);
-
-    res.json(newcharacter);
+    res.json(newreservation);
 });
 
 
