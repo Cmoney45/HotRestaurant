@@ -32,7 +32,7 @@
                         <button class="btn btn-danger btn-lg">
                             <span class="fa fa-home"></span> Home</button>
                     </a>
-                    <a href="/viewTables">
+                    <a href="/reserveform">
                         <button class="btn btn-danger btn-lg">
                             <span class="fa fa-credit-card"></span> Make Reservation </button>
                     </a>
@@ -77,44 +77,6 @@
     </div>
 
     <script type="text/javascript">
-        const sampleTables = [
-            table1 = {
-                uniqueID: 'freeze',
-                name: 'Mr. Freeze',
-                email: 'mrfreeze@gmail.com',
-                phone: '555-555-5555'
-            },
-            table2 = {
-                uniqueID: 'penguin',
-                name: 'Penguin',
-                email: 'penguin@gmail.com',
-                phone: '555-555-5555'
-            },
-            table3 = {
-                uniqueID: 'phoenix',
-                name: 'Phoenix Force',
-                email: 'phoenixforce@gmail.com',
-                phone: '555-555-5555'
-            },
-            {
-                name: "Yoda",
-                phone: '555-555-5555',
-                email: "ydgiahud@umn.ed",
-                uniqueID: 2000
-            },
-            {
-                name: "Yoda",
-                phone: '851-641-6516',
-                email: "ydgiahud@umn.ed",
-                uniqueID: 2000
-            },
-            {
-                name: "Yoda",
-                phone: `564-856-6558`,
-                email: "ydgiahud@umn.ed",
-                uniqueID: 2000
-            }
-        ]
 
         function runTableQuery() {
             // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
@@ -150,61 +112,6 @@
                 });
         }
 
-        function sampleScript(sampleTables) {
-
-            // Here we then log the tableData to console, where it will show up as an object.
-            console.log(sampleTables);
-            console.log("------------------------------------");
-
-            // Loop through and display each of the customers
-            for (let i = 0; i < 5; i++) {
-
-                // Get a reference to the tableList element and populate it with tables
-                var tableList = $("#tableList");
-
-                // Then display the fields in the HTML (Section Name, Date, URL)
-                var listItem = $("<li class='list-group-item mt-4'>");
-
-                listItem.append(
-                    $("<h2>").text("Table #" + (parseInt(i) + 1)),
-                    $("<hr>"),
-                    $("<h2>").text("ID: " + sampleTables[i].uniqueID),
-                    $("<h2>").text("Name: " + sampleTables[i].name),
-                    $("<h2>").text("Email: " + sampleTables[i].email),
-                    $("<h2>").text("Phone: " + sampleTables[i].phone)
-                );
-
-                tableList.append(listItem);
-            }
-        };
-
-        function sampleScript2(waitData) {
-
-            // Here we then log the waitlistData to console, where it will show up as an object.
-            console.log(waitData);
-            console.log("------------------------------------");
-
-            // Loop through and display each of the customers
-            for (let i = 5; i >= 5; i++) {
-
-                // Get a reference to the waitList element and populate it with tables
-                var waitList = $("#waitList");
-
-                // Then display the fields in the HTML (Section Name, Date, URL)
-                var listItem = $("<li class='list-group-item mt-4'>");
-
-                listItem.append(
-                    $("<h2>").text("Table #" + (i + 1)),
-                    $("<hr>"),
-                    $("<h2>").text("ID: " + waitData[i].uniqueID),
-                    $("<h2>").text("Name: " + waitData[i].name),
-                    $("<h2>").text("Email: " + waitData[i].email),
-                    $("<h2>").text("Phone: " + waitData[i].phone)
-                );
-
-                waitList.append(listItem);
-            }
-        }
 
         function runWaitListQuery() {
 
@@ -255,11 +162,9 @@
 
         // Run Queries!
         // ==========================================
-        sampleScript(sampleTables);
-        sampleScript2(sampleTables);
 
-        // runTableQuery();
-        // runWaitListQuery();
+        runTableQuery();
+        runWaitListQuery();
 
 
     </script>
